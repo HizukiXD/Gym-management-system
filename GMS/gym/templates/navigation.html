@@ -47,7 +47,7 @@
     <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#abc"><span
                 class="navbar-toggler-icon"></span></button>
-        <a class="navbar-brand" href="#"><img class="" style="width: 200px; height:30px; margin-top:auto; border-radius:10px" src="{% static 'images/logo2.png' %}" alt="logo"></a>
+        <a class="navbar-brand" href="#"><img class="" style="width: 75px; height:60px; margin-top: -15px; border-radius:10px" src="{% static 'images/logo3.png' %}" alt="logo"></a>
         <!-- <a href="" class="navbar-brand navbar-collapse collapse">GYM MANAGEMENT SYSTEM</a> -->
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
@@ -79,12 +79,13 @@
                     </div>
                 </li>
                 <li class="scroll dropdown">
-                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Member</a>
-                    <div class="dropdown-menu nav-link">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Member</a>
+                    <div class="dropdown-menu">
                         <a href="/add_member" class="dropdown-item">Add Member</a>
                         <a href="/view_member" class="dropdown-item">View Member</a>
                     </div>
                 </li>
+                
                 <li class="scroll"><a href="/logout">Logout</a></li>
                 {% endif %}
             </ul>

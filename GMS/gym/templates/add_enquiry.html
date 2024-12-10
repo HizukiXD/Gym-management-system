@@ -20,17 +20,17 @@
     </form>
 </div>
 
-{% ifequal error "no" %}
+{% if  error == "no" %}
 <script>
     alert('Record Inserted Successfully');
     window.location=("{% url 'view_enquiry' %}")
 </script>
-{% endifequal %}
-{% ifequal error "yes" %}
+{% endif%}
+{% if error == "yes" %}
 <script>
     alert('Something went wrong, Try Again');
 </script>
-{% endifequal %}
+{% endif%}
 
 {% endblock%}
 {% block css %}
@@ -48,8 +48,8 @@ text-align: center;
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <p class="text-white">Copyright @2020 All rights reserved | Made With <i class="fa fa-heart"></i>
-                    by Pawan Kumar</p>
+                <p class="text-white">Copyright @2020 All rights reserved | Made With 
+                    by  Suraj Chandra Shrestha</p>
             </div>
             <div class="col-sm-6">
                 <ul class="social-icons">

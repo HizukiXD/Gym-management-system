@@ -20,40 +20,48 @@
         <tbody>
             {% for i in member %}
             <tr>
-                <td>{{i.name}}</td>
-                <td>{{i.contact}}</td>
-                <td>{{i.emailid}}</td>
-                <td>{{i.age}}</td>
-                <td>{{i.gender}}</td>
-                <td>{{i.plan}}</td>
-                <td>{{i.joindate}}</td>
-                <td>{{i.expiredate}}</td>
-                <td>{{i.initialamount}}</td>
-                <td><a class="btn btn-danger" href="{% url 'delete_member' i.id %}" onclick="return confirm('Are You Sure?')">Delete</a></td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.contact }}</td>
+                <td>{{ i.emailid }}</td>
+                <td>{{ i.age }}</td>
+                <td>{{ i.gender }}</td>
+                <td>{{ i.plan }}</td>
+                <td>{{ i.joindate }}</td>
+                <td>{{ i.expiredate }}</td>
+                <td>{{ i.initialamount }}</td>
+                <td>
+                    <a class="btn btn-danger" href="{% url 'delete_member' i.id %}" 
+                       onclick="return confirm('Are You Sure?')">Delete</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
+{% endblock %}
 
-{% endblock %}
 {% block css %}
-.footer {
-position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-color: white;
-text-align: center;
-}
+<style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+    }
+</style>
 {% endblock %}
+
 {% block footer %}
-<footer id="footer" class="footer">
-    <div class="container">
+<footer id="footer" class="footer ">
+    <div class="container ">
         <div class="row">
             <div class="col-sm-6">
-                <p class="text-white">Copyright @2020 All rights reserved | Made With <i class="fa fa-heart"></i>
-                    by Pawan Kumar</p>
+                <p class="text-white">
+                    Copyright @2020 All rights reserved | Made With 
+                    by Suraj Chandra Shrestha
+                </p>
             </div>
             <div class="col-sm-6">
                 <ul class="social-icons">
@@ -68,4 +76,4 @@ text-align: center;
         </div>
     </div>
 </footer>
-{% endblock%}
+{% endblock %}
