@@ -9,8 +9,8 @@ from .models import *
 
 
 def Home(request):
-    if not request.user.is_staff:
-        return redirect('login')
+    # if not request.user.is_staff:
+        # return redirect('login')
     return render(request, 'index.html')
 
 
@@ -27,7 +27,7 @@ def Login(request):
     if request.method == 'POST':
         u = request.POST['uname']
         p = request.POST['pwd']
-
+    
         user = authenticate(username=u, password=p)
         try:
             if user.is_staff:
@@ -39,6 +39,25 @@ def Login(request):
             error = "yes"
     d = {'error': error}
     return render(request, 'login.html', d)
+
+
+def AdminLogin(request):
+    error = ""
+    if request.method == 'POST':
+        u = request.POST['uname']
+        p = request.POST['pwd']
+
+        user = authenticate(username=u, password=p)
+        try:
+            if user.is_staff:
+                login(request, user)
+                error = "no"
+            else:
+                error = "yes"
+        except:
+            error = "yes"
+    d = {'error': error}
+    return render(request, 'adminLogin.html', d)
 
 
 def Logout(request):

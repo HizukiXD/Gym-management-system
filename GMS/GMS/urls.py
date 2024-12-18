@@ -22,8 +22,12 @@ urlpatterns = [
     path('',Home, name='home'),
     path('about/',About, name = 'about'),
     path('contact/',Contact, name = 'contact'),
-    path('admin_login',Login, name='login'),
+    path('login/',Login, name='login'),
     path('logout/',Logout, name='logout'),
+
+
+    path('admin_login/',AdminLogin, name='admin_login'),
+
 
     path('add_enquiry/',Add_Enquiry,name='add_enquiry'),
     path('view_enquiry/',View_Enquiry,name='view_enquiry'),
@@ -40,5 +44,6 @@ urlpatterns = [
     path('add_member/',Add_Member,name='add_member'),
     path('view_member/',View_Member,name='view_member'),
     path('delete_member(?p<int:pid>)', Delete_Member, name='delete_member'),
+
 ]
  
