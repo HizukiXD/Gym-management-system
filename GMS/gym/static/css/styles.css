@@ -872,8 +872,9 @@ width: 100px;
 ********* Footer ******
 ************************/
 #footer {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  position: relative;
+  padding-top: 23px;
+  padding-bottom: 48px;
   color: #fff;
   background: #222222;
 }

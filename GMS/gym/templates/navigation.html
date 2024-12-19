@@ -84,18 +84,42 @@
       /></a>
       <!-- <a href="" class="navbar-brand navbar-collapse collapse">GYM MANAGEMENT SYSTEM</a> -->
       <div class="collapse navbar-collapse navbar-right">
+        {% if not request.user.is_authenticated %}
         <ul class="nav navbar-nav">
+
           <li class="scroll active"><a href="/">Home</a></li>
           <li class="scroll"><a href="/about">About</a></li>
           <li class="scroll"><a href="/contact">Contact</a></li>
-          {% if not request.user.is_authenticated %}
-          <li class="scroll"><a href="/login">Login</a></li>
-          {% endif %} {% comment %}
-          <li class="scroll"><a href="/admin_login/">Login</a></li>
-          {% endcomment %}
+         
         </ul>
+        {%endif%}
 
         <ul class="nav navbar-nav">
+          <li class="scroll dropdown">
+           
+              {% if request.user.is_staff %}
+              <a  class="nav-link dropdown-toggle" data-toggle="dropdown"
+              >MEMBER</a>
+              <div class="dropdown-menu">
+                <a href="/add_member" class="dropdown-item">Add Member</a>
+              
+                <a href="/view_member" class="dropdown-item">View Member</a>
+              
+              </div>
+            
+            {%else%}
+            <a  href="/add_member" class="nav-link " 
+              >APPLY NOW</a>
+              {%endif%}
+
+          </li>
+
+          {% comment %} ----Login buttom------ {% endcomment %}
+          {% if not request.user.is_authenticated %}
+          <li class="scroll"><a href="/login">Login</a></li>
+          {% endif %} 
+
+
           {% if request.user.is_staff %}
           <li class="scroll dropdown active">
             <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"
@@ -124,15 +148,7 @@
               <a href="/view_equipment" class="dropdown-item">View Equipment</a>
             </div>
           </li>
-          <li class="scroll dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
-              >Member</a
-            >
-            <div class="dropdown-menu">
-              <a href="/add_member" class="dropdown-item">Add Member</a>
-              <a href="/view_member" class="dropdown-item">View Member</a>
-            </div>
-          </li>
+
 
           <li class="scroll"><a href="/logout">Logout</a></li>
           {% endif %}

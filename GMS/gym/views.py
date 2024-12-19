@@ -156,8 +156,8 @@ def Delete_Plan(request,pid):
 def Add_Member(request):
     error = ""
     plan1 = Plan.objects.all()
-    if not request.user.is_staff:
-        return redirect('login')
+    # if not request.user.is_staff:
+    #     return redirect('login')
     if request.method == 'POST':
         n = request.POST['name']
         c = request.POST['contact']
